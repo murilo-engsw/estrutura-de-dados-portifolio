@@ -2,20 +2,40 @@
 
 int main()
 {
-
     int numero;
-    int soma = 0;
+    int soma;
+    int contador;
+    int continuar;
 
-    for (int contador = 1; contador <= 5; contador++)
+    do
     {
+        soma = 0;
 
-        printf("Digite o %dº numero: ", contador);
-        scanf("%d", &numero);
+        printf("--- Leitura e Soma (For e Acumulador) ---\n");
+        for (int i = 1; i <= 5; i++)
+        {
+            printf("Digite o %d numero: ", i);
+            scanf("%d", &numero);
+            soma += numero;
+        }
+        printf("Soma total: %d\n\n", soma);
 
-        soma += numero;
-    }
+        printf("--- Contagem Regressiva (While e Contador) ---\n");
+        printf("Digite um numero para iniciar a contagem: ");
+        scanf("%d", &contador);
 
-    printf("\nSoma total: %d\n", soma);
+        while (contador > 0)
+        {
+            printf("%d ", contador);
+            contador--;
+        }
+        printf("0\n\n");
+
+        printf("Deseja testar novamente? (1 - Sim / 0 - Nao): ");
+        scanf("%d", &continuar);
+        printf("\n");
+
+    } while (continuar != 0);
 
     return 0;
 }
