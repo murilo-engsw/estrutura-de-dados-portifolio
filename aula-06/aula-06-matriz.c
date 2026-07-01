@@ -1,31 +1,27 @@
 #include <stdio.h>
 
-int main()
-{
+int main() {
+    int matriz[2][2];
+    int soma = 0;
 
-    int matriz[3][3];
-
-    printf("Digite os valores da matriz 3x3:\n\n");
-
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            printf("Elemento [%d][%d]: ", i, j);
+    printf("--- Leitura e Processamento de Matriz ---\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("Digite o valor para a posicao [%d][%d]: ", i, j);
             scanf("%d", &matriz[i][j]);
+            soma += matriz[i][j]; // Acumulando valores com lacos aninhados
         }
     }
 
-    printf("\nMatriz informada:\n\n");
-
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            printf("%4d", matriz[i][j]);
+    printf("\nLayout da Matriz:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("%d\t", matriz[i][j]);
         }
         printf("\n");
     }
+    
+    printf("\nSoma total dos elementos da matriz: %d\n", soma);
 
     return 0;
 }
